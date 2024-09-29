@@ -10,35 +10,34 @@ import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
+// Zod schema to validate the form input
 const FormSchema = z.object({
-  product: z
-    .number()
-    .min(1, {
-      message: "Answer is a number between 1 and 9.",
-    })
-    .max(9, {
-      message: "Answer is a number between 1 and 9."
-    })
+  product: z.union([
+    z.number(),
+    z.null()
+  ])
 })
 
 const One = () => {
-  const [randomNumber, setRandomNumber] = useState<number | null>(null);
+  const [randomNumber, setRandomNumber] = useState<number | null>(null)
 
   // Generate the random number only on the client after the component mounts
   useEffect(() => {
     const getRandomNumber = (): number => {
-      return Math.floor(Math.random() * 9) + 1;
-    };
-    setRandomNumber(getRandomNumber());
-  }, []);
+      return Math.floor(Math.random() * 9) + 1
+    }
+    setRandomNumber(getRandomNumber())
+  }, [])
 
+  // React Hook Form setup with Zod resolver
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      product: undefined,
+      product: null, // Start with null to keep the input empty
     },
   })
 
+  // Form submit handler
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
       title: "Yes! That's right!",
@@ -67,9 +66,10 @@ const One = () => {
 
                     <Input
                       {...field}
-                      className="text-6xl w-[90px]  h-auto"
-                      value={field.value !== undefined ? field.value : ''}
-                      onChange={(el) => field.onChange(Number(el.target.value))}
+                      className="text-6xl w-[90px] h-auto"
+                      // Handle empty field by allowing empty string and converting valid input to number
+                      value={field.value !== null ? field.value : ''}
+                      onChange={(el) => field.onChange(el.target.value ? Number(el.target.value) : null)} // Use null for empty input
                     />
 
                     <Button
