@@ -12,10 +12,7 @@ import { Input } from "@/components/ui/input"
 
 // Zod schema to validate the form input
 const FormSchema = z.object({
-  product: z.union([
-    z.number(),
-    z.null()
-  ])
+  product: z.number()
 })
 
 const One = () => {
@@ -33,7 +30,7 @@ const One = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      product: null, // Start with null to keep the input empty
+      product: undefined,
     },
   })
 
@@ -67,9 +64,8 @@ const One = () => {
                     <Input
                       {...field}
                       className="text-6xl w-[90px] h-auto"
-                      // Handle empty field by allowing empty string and converting valid input to number
-                      value={field.value !== null ? field.value : ''}
-                      onChange={(el) => field.onChange(el.target.value ? Number(el.target.value) : null)} // Use null for empty input
+                      value={field.value !== undefined ? field.value : ''}
+                      onChange={(el) => field.onChange(Number(el.target.value) || 0)} // Fallback to 0 if input is empty
                     />
 
                     <Button
