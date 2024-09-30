@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import GoogleAdSense from "@/components/GoogleAdSense";
+import { geistSans, geistMono } from "./fonts";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/toaster";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Tadabu",
@@ -33,7 +21,6 @@ export default function RootLayout({
       >
         {children}
         <Toaster />
-        <GoogleAdSense pId="1654762277278689" />
       </body>
     </html>
   );
