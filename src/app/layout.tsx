@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import GoogleAdSense from "@/components/GoogleAdSense";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -32,7 +33,7 @@ export default function RootLayout({
       >
         {children}
         <Toaster />
-
+        <GoogleAdSense pId="1654762277278689" />
       </body>
     </html>
   );
