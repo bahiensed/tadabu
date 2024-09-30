@@ -5,10 +5,10 @@ export default function Home() {
       <div className="p-20 w-1/2">
         <p>Learning Times Table does not have to be boring.</p>
         <h1 className="text-5xl text-black lg:max-w-lg font-bold mb-6">
-        Learn and practice <span className="red-gradient">with Tadabu</span>. Let&apos;s enjoy Math!
+          Learn and practice <span className="red-gradient">with Tadabu</span>. Let&apos;s enjoy Math!
         </h1>
         <p>
-        I create this app during the pandemics to teach my own kids. They loved it! Hope your children also like Tadabu. Click on the numbered squares to practice a times table. Have fun!
+          I created this app during the COVID-19 pandemic to teach my kids while we were stuck at home.. They loved it! Hope your children also like Tadabu. Click on the numbered squares to practice a times table. Have fun!
         </p>
       </div>
 
