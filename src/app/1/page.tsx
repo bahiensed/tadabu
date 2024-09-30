@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import { usePathname } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -15,15 +16,28 @@ const FormSchema = z.object({
   product: z.number()
 })
 
-const One = () => {
-  const [randomNumber, setRandomNumber] = useState<number | null>(null)
+const Multiplication = () => {
+  const pathname: string = usePathname();
+  const multiplier = pathname.split("/").filter(Boolean).pop();
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const [randomNumber, setRandomNumber] = useState<number | null>(null);
+  const [attempts, setAttempts] = useState<number>(0); // Track the number of attempts
+  const [correctAnswers, setCorrectAnswers] = useState<number>(0); // Track correct answers
+
+  // Function to generate a new random number between 1 and 9
+  const getRandomNumber = (): number => {
+    return Math.floor(Math.random() * 9) + 1;
+  }
 
   // Generate the random number only on the client after the component mounts
   useEffect(() => {
-    const getRandomNumber = (): number => {
-      return Math.floor(Math.random() * 9) + 1
+    setRandomNumber(getRandomNumber());
+
+    // Set focus on the input field
+    if (inputRef.current) {
+      inputRef.current.focus();
     }
-    setRandomNumber(getRandomNumber())
   }, [])
 
   // React Hook Form setup with Zod resolver
@@ -36,14 +50,40 @@ const One = () => {
 
   // Form submit handler
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "Yes! That's right!",
-      description: (
-        <pre className="mt-2 w-[320px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    })
+    if (data.product === randomNumber) {
+      setCorrectAnswers(correctAnswers + 1); // Increment correct answers
+      toast({
+        title: "Yes! That's right!",
+        description: (
+          <pre className="mt-2 w-[320px] text-2xl font-semibold rounded-md bg-green-500 p-4">
+            <code className="text-white">{randomNumber} x {multiplier} = {randomNumber}</code>
+          </pre>
+        ),
+      })
+    } else {
+      toast({
+        title: "Not quite right...",
+        description: (
+          <pre className="mt-2 w-[320px] text-2xl font-semibold rounded-md bg-red-500 p-4">
+            <code className="text-white">{randomNumber} x {multiplier} = {randomNumber}</code>
+          </pre>
+        ),
+      })
+    }
+
+    form.reset();
+    setRandomNumber(getRandomNumber());
+
+    // Increment attempts
+    setAttempts(attempts + 1);
+
+    // Check if 10 attempts are done
+    if (attempts + 1 === 10) {
+      alert(`OK! You got ${correctAnswers + 1} correct answers out of 10.`);
+      // Reset state for a new round
+      setAttempts(0);
+      setCorrectAnswers(0);
+    }
   }
 
   return (
@@ -66,6 +106,7 @@ const One = () => {
                       className="text-6xl w-[90px] h-auto"
                       value={field.value !== undefined ? field.value : ''}
                       onChange={(el) => field.onChange(Number(el.target.value) || 0)} // Fallback to 0 if input is empty
+                      ref={inputRef} // Set the ref to the input field
                     />
 
                     <Button
@@ -88,4 +129,4 @@ const One = () => {
   )
 }
 
-export default One
+export default Multiplication
