@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Tadabu",
-  description: "A simple app for kids to learn and practice the multiplication table in an easy and fun way",
+  description: "A simple app to learn and practice the multiplication table in an easy and fun way",
 };
 
 export default function RootLayout({
