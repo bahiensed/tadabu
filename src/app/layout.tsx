@@ -20,6 +20,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="c9c2688d-203b-4948-8513-0c5c8e99ed5b" data-blockingmode="auto" type="text/javascript"></Script>
         <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}`} crossOrigin="anonymous"></Script>
         {children}
         <Toaster />
