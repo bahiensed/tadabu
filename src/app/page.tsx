@@ -4,11 +4,11 @@ export default function Home() {
     <div className="flex flex-row w-full h-screen">
       <div className="p-20 w-1/2">
         <p>Learning Times Table does not have to be boring.</p>
-        <h1 className="text-4xl text-black lg:max-w-lg font-bold mb-6">
-        Lorem ipsum dolor <span className="red-gradient">Tadabu elit</span> amet adipiscing.
+        <h1 className="text-5xl text-black lg:max-w-lg font-bold mb-6">
+        Learn and practice <span className="red-gradient">with Tadabu</span>. Let&apos;s enjoy Math!
         </h1>
         <p>
-        Nulla suscipit urna quis eros vestibulum, eget mollis augue euismod. Nunc vel lacus tempus, tempor libero eu, laoreet mauris. Nullam velit mi, pellentesque sed tortor eu, placerat accumsan massa. Nam maximus, libero vel scelerisque sollicitudin, enim nibh congue dui, at porttitor massa odio sed ligula. Vivamus blandit urna mi, at eleifend leo porttitor a. Nulla tempor accumsan sollicitudin. Donec auctor odio ex, eu convallis diam tempus sit amet. Vivamus finibus venenatis pretium.
+        I create this app during the pandemics to teach my own kids. They loved it! Hope your children also like Tadabu. Click on the numbered squares to practice a times table. Have fun!
         </p>
       </div>
 
