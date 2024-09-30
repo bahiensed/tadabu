@@ -76,3 +76,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.red-gradient {
+  background: linear-gradient(50deg, #44345e 4%, #640bb8 96%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
