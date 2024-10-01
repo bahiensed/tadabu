@@ -1,51 +1,114 @@
-
 export default function Home() {
   return (
     <div className="flex flex-row w-full h-screen">
-      <div className="p-20 w-1/2">
+      <div className="p-28 w-1/2">
         <p>Learning Times Table does not have to be boring.</p>
         <h1 className="text-5xl text-black lg:max-w-lg font-bold mb-6">
-          Learn and practice <span className="red-gradient">with Tadabu</span>. Let&apos;s enjoy Math!
+          Learn and practice <span className="red-gradient">with Tadabu</span>.
+          Let&apos;s enjoy Math!
         </h1>
         <p>
-          I created this app during the COVID-19 pandemic to teach my kids while we were stuck at home.. They loved it! Hope your children also like Tadabu. Click on the numbered squares to practice a times table. Have fun!
+          I created this app during the COVID-19 pandemic to teach my kids while
+          we were stuck at home.. They loved it! Hope your children also like
+          Tadabu. Click on the numbered squares to practice a times table. Have
+          fun!
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 justify-center p-20 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 justify-center p-28 gap-10 ">
         <a href="./1">
-          <div className="shadow-2xl border-8 border-red-500 bg-red-100 w-full aspect-square text-red-600 flex text-6xl justify-center items-center hover:scale-105">x 1</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110 ">
+            <div className="drop-shadow-2xl bg-red-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-red-200 text-3xl">x 1</span>
+            </div>
+            <div className="w-1 h-10 bg-red-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-red-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./2">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-blue-500 bg-blue-200 text-blue-600">x 2</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-blue-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-blue-200 text-3xl">x 2</span>
+            </div>
+            <div className="w-1 h-10 bg-blue-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-blue-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./3">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-yellow-500 bg-yellow-100 text-yellow-600">x 3</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-yellow-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-yellow-200 text-3xl">x 3</span>
+            </div>
+            <div className="w-1 h-10 bg-yellow-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-yellow-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./4">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-green-500 bg-green-100 text-green-600">x 4</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-green-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-green-200 text-3xl">x 4</span>
+            </div>
+            <div className="w-1 h-10 bg-green-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-green-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./5">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-orange-500 bg-orange-100 text-orange-600">x 5</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-orange-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-orange-200 text-3xl">x 5</span>
+            </div>
+            <div className="w-1 h-10 bg-orange-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-orange-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./6">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-purple-500 bg-purple-100 text-purple-600">x 6</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-purple-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-purple-200 text-3xl">x 6</span>
+            </div>
+            <div className="w-1 h-10 bg-purple-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./7">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-red-500 bg-red-100 text-red-600">x 7</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-red-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-red-200 text-3xl">x 7</span>
+            </div>
+            <div className="w-1 h-10 bg-red-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-red-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./8">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-blue-500 bg-blue-200 text-blue-600">x 8</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-blue-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 once-spin">
+              <span className="text-blue-200 text-3xl">x 8</span>
+            </div>
+            <div className="w-1 h-10 bg-blue-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-blue-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./9">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-6xl justify-center items-center hover:scale-105 border-yellow-500 bg-yellow-100 text-yellow-600">x 9</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-yellow-500 opacity-75 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              <span className="text-yellow-200 text-3xl">x 9</span>
+            </div>
+            <div className="w-1 h-10 bg-yellow-500 opacity-75"></div>
+            <div className="w-2 h-2 rounded-full bg-yellow-500 opacity-75"></div>
+          </div>
         </a>
         <a href="./">
-          <div className="shadow-2xl border-8 w-full aspect-square flex text-xl justify-center items-center hover:scale-105 border-green-500 bg-green-100 text-green-600">Random</div>
+          <div className="relative flex flex-col items-center transition-transform transform duration-300 hover:scale-110">
+            <div className="drop-shadow-2xl bg-green-500 opacity-50 rounded-full w-24 h-36 flex items-center justify-center mb-2 spin-once">
+              {" "}
+              {/* More transparent for Random */}
+              <span className="text-green-200 text-xl">Random</span>
+            </div>
+            <div className="w-1 h-10 bg-green-500 opacity-50"></div>
+            <div className="w-2 h-2 rounded-full bg-green-500 opacity-50"></div>
+          </div>
         </a>
       </div>
-
-      </div>
-
+    </div>
   );
 }
