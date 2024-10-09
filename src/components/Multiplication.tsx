@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Arrows from "./ui/arrows";
+import ArrowButtons from "./ui/arrowButtons";
 
 // Zod schema to validate the form input
 const FormSchema = z.object({
@@ -106,8 +107,8 @@ const Multiplication = () => {
 
   return (
     <>
-     <Arrows/>
-      <div className="flex justify-center items-center w-full">
+      <Arrows />
+      <div className="flex justify-center items-center w-full -mt-24">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -161,6 +162,9 @@ const Multiplication = () => {
                 </FormItem>
               )}
             />
+            <div>
+              <ArrowButtons />
+            </div>
           </form>
         </Form>
       </div>

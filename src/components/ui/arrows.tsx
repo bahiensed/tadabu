@@ -3,7 +3,7 @@ import arrows from "@/assets/images/arrows.png";
 
 function Arrows() {
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-start mt-8">
       <Image src={arrows} alt="Clickable areas" useMap="#image-map" />
       <map name="image-map">
         <area
