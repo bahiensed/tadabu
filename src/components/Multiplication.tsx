@@ -16,9 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
-import arrowHome from "@/assets/images/home.png";
-import Link from "next/link";
+import Arrows from "./ui/arrows";
 
 // Zod schema to validate the form input
 const FormSchema = z.object({
@@ -108,12 +106,7 @@ const Multiplication = () => {
 
   return (
     <>
-      <div className="flex flex-col items-start">
-        <Link href="/">
-        <Image src={arrowHome} alt="arrowHome" />
-        </Link>
-        
-      </div>
+     <Arrows/>
       <div className="flex justify-center items-center w-full">
         <Form {...form}>
           <form
