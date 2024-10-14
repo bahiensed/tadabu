@@ -1,6 +1,14 @@
+import SignIn from "@/components/ui/signin"
+
 export default function Home() {
   return (
+    <>
+    <div className="flex justify-end ">
+    <SignIn/>
+    </div>
+
     <div className="flex flex-row w-full h-screen">
+     
       <div className="p-28 w-1/2">
         <p>Learning Times Table does not have to be boring.</p>
         <h1 className="text-5xl text-black lg:max-w-lg font-bold mb-6">
@@ -110,5 +118,6 @@ export default function Home() {
         </a>
       </div>
     </div>
+    </>
   );
 }
