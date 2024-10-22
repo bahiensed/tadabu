@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Arrows from "./ui/arrows";
-import ArrowButtons from "./ui/arrowButtons";
+
 
 // Zod schema to validate the form input
 const FormSchema = z.object({
@@ -30,9 +30,10 @@ const Multiplication = () => {
     pathname.split("/").filter(Boolean).pop() || "1",
     10
   );
+
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const [randomNumber, setRandomNumber] = useState<number | null>(null);
+  const [randomNumber, setRandomNumber] = useState<number>(0);
   const [attempts, setAttempts] = useState<number>(0); // Track the number of attempts
   const [correctAnswers, setCorrectAnswers] = useState<number>(0); // Track correct answers
 
@@ -162,12 +163,30 @@ const Multiplication = () => {
                 </FormItem>
               )}
             />
-            <div>
-              <ArrowButtons />
-            </div>
+            
           </form>
+          
         </Form>
       </div>
+      <div className="flex justify-center items-center space-x-14 mt-40">
+              <button
+                className="relative w-0 h-0 border-t-[30px] border-t-transparent border-b-[30px] border-b-transparent border-r-[50px] border-r-green-500 focus:outline-none"
+                onClick={() => setRandomNumber((prev) => Math.max(prev - 1, 1))} // Decrement, ensuring it doesn't go below 1
+              >
+                <span className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white">
+                  {randomNumber - 1}x
+                </span>
+              </button>
+
+              <button
+                className="relative w-0 h-0 border-t-[30px] border-t-transparent border-b-[30px] border-b-transparent border-l-[50px] border-l-green-500 focus:outline-none"
+                onClick={() => setRandomNumber((prev) => prev + 1)} // Increment
+              >
+                <span className="absolute left-1/2 top-1/2 transform -translate-x-10 -translate-y-1/2 text-white">
+                  {randomNumber + 1}x
+                </span>
+              </button>
+            </div>
     </>
   );
 };
